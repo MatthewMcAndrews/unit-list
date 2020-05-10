@@ -1,0 +1,3 @@
+[submodule "command-line-method-runner"]
+	path = command-line-method-runner
+	url = https://github.com/Greycoat21/command-line-method-runner.git
