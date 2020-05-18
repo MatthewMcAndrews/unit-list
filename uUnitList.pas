@@ -1,4 +1,4 @@
-unit uAnalyzeFile;
+unit uUnitList;
 
 interface
 
@@ -59,6 +59,7 @@ begin
   var UnprocessedUnitPaths := TList<string>.Create;
   for var Value in KnownUnits.Values do
     UnprocessedUnitPaths.Add(Value);
+  var MissingFiles := TDictionary<string, Variant>.Create;
   while UnprocessedUnitPaths.Count > 0 do begin
 
     var UnitToProcess := UnprocessedUnitPaths.First;
@@ -76,8 +77,8 @@ begin
           KnownUnits.Add(UsedUnit.Name, UnitFilePath);
           UnprocessedUnitPaths.Add(UnitFilePath);
         end else begin
-          Writeln('File not found: ' + UsedUnit.Name);
-//          raise Exception.Create('Unknown Unit File: ' + UsedUnit.Name);
+          Writeln('----File not found: ' + UsedUnit.Name);
+          MissingFiles.AddOrSetValue(UsedUnit.Name, Null);
         end;
       end;
     end;
@@ -94,6 +95,16 @@ begin
   Writeln('All Units Used By Project:');
   UnitPaths.Sort;
   for var UnitPath in UnitPaths do
+    Writeln('  ', UnitPath);
+
+  var MissingUnitPaths := TList<string>.Create;
+  MissingUnitPaths.AddRange(MissingFiles.Keys);
+
+  Writeln('');
+  Writeln('Units Used By Project, But Not Found:');
+  Writeln('*The Paths To These Units May Need To Be Added To Your Library/Browsing Paths.');
+  MissingUnitPaths.Sort;
+  for var UnitPath in MissingUnitPaths do
     Writeln('  ', UnitPath);
 
 end;
