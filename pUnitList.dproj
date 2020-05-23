@@ -99,8 +99,8 @@
         <DCCReference Include="delphi-files\uDpr.pas"/>
         <DCCReference Include="cmd\PathAbsRel.pas"/>
         <DCCReference Include="delphi-files\uDelphiFile.pas"/>
-        <DCCReference Include="files\uFile.pas"/>
         <DCCReference Include="delphi-files\uPas.pas"/>
+        <DCCReference Include="delphi.file.lib\uFile.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

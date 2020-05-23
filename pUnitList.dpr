@@ -13,8 +13,8 @@ uses
   uDpr in 'delphi-files\uDpr.pas',
   PathAbsRel in 'cmd\PathAbsRel.pas',
   uDelphiFile in 'delphi-files\uDelphiFile.pas',
-  uFile in 'files\uFile.pas',
-  uPas in 'delphi-files\uPas.pas';
+  uPas in 'delphi-files\uPas.pas',
+  uFile in 'delphi.file.lib\uFile.pas';
 
 procedure PrintHelp;
 begin
