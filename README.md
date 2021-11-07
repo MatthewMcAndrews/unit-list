@@ -1,5 +1,5 @@
 # unit-list
-A way to list the full file path of all the files in a project
+A way to list the full file path of all the files in a Delphi project (.dpr)
 
 
 Known deficiencies include:
